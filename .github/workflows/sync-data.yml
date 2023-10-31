@@ -29,8 +29,8 @@ jobs:
 
       - name: Create and Push File
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          git config --local user.email "69580789+Sreenivas-Kalluru@users.noreply.github.com"
+          git config --local user.name "Sreenivas-Kalluru"
           git add  Scripts/commit.txt
           git commit -m 'Data Updated' ||  echo 'No changes to commit'
           git fetch origin main
