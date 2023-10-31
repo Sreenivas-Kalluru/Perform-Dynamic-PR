@@ -1,7 +1,8 @@
 name: Sample Site Validation
 
 on:
-  pull_request:
+  schedule:
+    - cron: '0 */2 * * *'
 
 permissions:
   pull-requests: write
@@ -29,8 +30,8 @@ jobs:
 
       - name: Create and Push File
         run: |
-          git config --local user.email "69580789+Sreenivas-Kalluru@users.noreply.github.com"
-          git config --local user.name "Sreenivas-Kalluru"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add  Scripts/commit.txt
           git commit -m 'Data Updated' ||  echo 'No changes to commit'
           git fetch origin main
