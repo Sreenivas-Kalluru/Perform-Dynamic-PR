@@ -33,8 +33,15 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add  Scripts/commit.txt
           git commit -m 'Data Updated' ||  echo 'No changes to commit'
-          git fetch origin main
-          git push origin HEAD:main || echo "Error occurred while push to origin"
+          git push 
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dynamic-pull-request
+          title: "Automated changes"
+          body: "This pull request was generated automatically."
 
       - name: Check for differences
         run: |
